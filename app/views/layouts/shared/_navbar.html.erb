@@ -1,0 +1,37 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <div class="container-fluid">
+    <%= link_to "Home", root_path, :method => :get %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="nav bar-toggler-icon"></span>
+    </button>
+    
+    <ul class="navbar-nav ms-auto">
+      <% if current_user %>
+        <li class="nav-item">
+        <li class="actions p-2">
+          <%= link_to "My Profile", user_profile_path, :method => :get %>
+        </li>
+        <li class="actions p-2", class="btn btn-primary mt-4", style="float: right;">
+          <%= link_to "New Tweet", new_users_tweet_path(current_user), :method => :get %>
+        </li>
+        <li class="actions p-2", class="btn btn-primary mt-4", style="float: right;">
+          <%= link_to "My Tweets", users_tweets_path, :method => :get %>
+        </li>
+        <span class="p-2"><%= current_user.email %></span>
+        </li>
+        <li class="nav-item p-2">
+          <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %>
+        </li>
+        <% else %>
+        <li class="nav-item p-2">
+          <%= link_to "Sign_up", new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item p-2">
+          <%= link_to "Sign_in", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+    </div>
+  </div>
+</nav> 

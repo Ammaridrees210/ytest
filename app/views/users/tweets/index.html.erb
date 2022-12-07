@@ -1,0 +1,20 @@
+<div class="container">
+  <ul>
+    <% @tweets.each do |tweet| %><br>
+      <li><div class="card card-body border-primary mb-3 px-4" style="line-height: 2px"><%= link_to @tweets.name, users_tweet_path(tweet) %>
+        <div class="row justify-content-end px-3">
+            <div class="actions px-1" style="line-hight: 2px">
+              <%= link_to 'show', users_tweet_path(tweet.id), method: :patch %>
+            </div>
+            <div class="actions px-1">
+              <%= link_to 'edit', edit_users_tweet_path(tweet.id), method: :patch %>
+            </div>
+            <div class="actions px-1">
+              <%= link_to 'destroy', users_tweet_path(tweet.id), data: {turbo_method: "delete",turbo_confirm: "Are you sure?" } %>
+            </div>  
+        </div>
+      </li>
+    <% end %>
+    <%= link_to "Go Back", user_profile_path %> 
+  </ul>
+</div>

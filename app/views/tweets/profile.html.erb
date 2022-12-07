@@ -1,0 +1,11 @@
+<div class="card card-body border-primary">
+    <p>Full Name: <%= current_user.first_name %> <%= current_user.last_name %></p>
+    <p>Phone :<%= current_user.phone%></p>
+    <p>Address :<%= current_user.address%></p>
+    <p>Email :<%= current_user.email%></p>
+    <p>Username :<%= current_user.username%></p>
+        
+</div>
+<div class="p-2">
+<%= link_to "Tweets", users_tweets_path(current_user), :method => :get %><br>
+</div>
