@@ -11,13 +11,7 @@
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-    *{
-      border: 1px solid grey;
-    }
     
-    </style>
   </head>
 
   <body>
@@ -25,7 +19,7 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-  <div class="">
+  <div class="container">
     <%= yield %>
 </div>
   </body>
