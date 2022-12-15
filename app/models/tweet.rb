@@ -26,14 +26,5 @@ class Tweet < ApplicationRecord
     # users = User.all => to View all users and ids
     # @t.user_id = "pass any user id"
     # @t.save => to update the tweet record
-
-   #  after_initialize do 
-   #    self.current_user.tweet.publish_at ||= 24.hours.form_now
-   #  end
-
-   #  def published?
-   #    tweet_id?
-   #  end
-    
- end
+end
  

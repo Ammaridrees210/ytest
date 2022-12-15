@@ -1,7 +1,6 @@
 class Users::Tweet < ApplicationRecord
     belongs_to :user 
     validates :title,:description, presence: true, uniqueness: true
-    # validates :user_id, presence: true
 
 
     before_destroy :print_before_destroy_massage

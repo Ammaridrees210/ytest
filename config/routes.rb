@@ -4,23 +4,13 @@ Rails.application.routes.draw do
 
   
   namespace :users do
-    resources :tweets do
-      # collection do
-      #     get :all_tweets
-      # end
-    end
+    resources :tweets
   end
-
-  # resources :users do
-  #   resources :tweets
-  # end
 
   resources :tweets, only: [:index]
 
-
-
   root to: "tweets#index"
 
-
   get "profile", to: "tweets#profile", as: :user_profile
+  
 end
